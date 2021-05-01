@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\LineItemController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,9 @@ Route::get('/product/{id}', [ProductController::class, 'show'])
 
 Route::post('/line_item/create', [LineItemController::class, 'create'])
     ->name('line_item.create');
+
+Route::get('/cart', [CartController::class, 'index'])
+    ->name('cart.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
