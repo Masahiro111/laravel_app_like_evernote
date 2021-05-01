@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LineItemController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,9 @@ Route::get('/', [ProductController::class, 'index'])
 
 Route::get('/product/{id}', [ProductController::class, 'show'])
     ->name('product.show');
+
+Route::post('/line_item/create', [LineItemController::class, 'create'])
+    ->name('line_item.create');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
