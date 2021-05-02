@@ -35,6 +35,9 @@ Route::post('/line_item/delete', [LineItemController::class, 'delete'])
 Route::get('/cart', [CartController::class, 'index'])
     ->name('cart.index');
 
+Route::get('/cart/checkout', [CartController::class, 'checkout'])
+    ->name('cart.checkout');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
