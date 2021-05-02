@@ -29,6 +29,9 @@ Route::get('/product/{id}', [ProductController::class, 'show'])
 Route::post('/line_item/create', [LineItemController::class, 'create'])
     ->name('line_item.create');
 
+Route::post('/line_item/delete', [LineItemController::class, 'delete'])
+    ->name('line_item.delete');
+
 Route::get('/cart', [CartController::class, 'index'])
     ->name('cart.index');
 
