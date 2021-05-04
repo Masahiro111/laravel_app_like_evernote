@@ -29,6 +29,10 @@ class CartController extends Controller
         $cart_id = Session::get('cart');
         $cart = Cart::find($cart_id);
 
+        if (count($cart->products) <= 0) {
+            return redirect(route('cart.index'));
+        }
+
         $line_items = [];
         foreach ($cart->products as $product) {
             $line_item = [
