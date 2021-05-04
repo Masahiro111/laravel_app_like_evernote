@@ -38,6 +38,9 @@ Route::get('/cart', [CartController::class, 'index'])
 Route::get('/cart/checkout', [CartController::class, 'checkout'])
     ->name('cart.checkout');
 
+Route::get('/cart/success', [CartController::class, 'success'])
+    ->name('cart.success');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
